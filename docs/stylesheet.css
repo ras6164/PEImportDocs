@@ -73,3 +73,7 @@ input {
     width: 100%;
   }
 }
+
+.column input {
+	width: 100%;
+}
