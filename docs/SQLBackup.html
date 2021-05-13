@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+
+<h1>Step 3: SQL BACKUP </h1>
+
+<p>This method uses DreamHost's internal website and phpMyAdmin platform to access and export MySQL databases. - <a href="https://help.dreamhost.com/hc/en-us/articles/214395738-phpMyAdmin-How-to-backup-or-export-a-database-or-table"> Reference</a></p>
+<p>MySQL databases can also be backed up via SSH - <a href="https://help.dreamhost.com/hc/en-us/articles/221686207-SSH-Backing-up-your-database">Reference</a>
+
+<p>
+Backing up the SQL will require a similar process as FTP.
+</p>
+
+<ol>
+<li>Log into DreamHost</li>
+<li>Once logged in, locate the left side panel and select "More"</li>
+<img src="./images/SQL1.png"/>
+<li>From the "More" drop down, select "MySQL Databases"</li>
+<img src="./images/SQL2.png"/>
+<li>A page will load displaying options to create a new SQL Database and diplsay all current MySQL servers currently hosted in the DreamHost account</li>
+<img src="./images/SQL3.png"/>
+<li>Locate your desired domain and copy the hostname (MYSQL.MYDOMAIN.Drnoce.biz) address into a seperate document for later use</li> 
+<p>Additionally, middle click or right click "phpMyAdmin" and open it as a new window or tab. We will use this page to log in to the database. </p>
+<img src="./images/SQL4.png"/>
+<li>Then, continue down the page until you have located your domain under "Databases on this server".</li> <!-- EXPLAIN THIS BETTER BUD -->
+<p>Then click the item in third column, usually YourDomaindrnocebiz or something similar. This text is blue and links to another page. Click on that text. </p>
+<img src="./images/SQL5.png"/>
+<li>The MySQL user page will be displayed.</li>
+<p>At the top of the page, you will see the header: "User XXXXX has access to the following ....". Copy word/phrase after user aside for later use. </p>
+<p>This is the same text that was clicked on in the previous step. </p>
+<p>This is your MySQL Database username. </p>
+<img src="./images/SQL6.png"/><!--SQL 6-->
+<li>Next, scroll down and locate "Current Password". Click the "Show" button to display the user's SQL password. Put this information aside.</li>
+<img src="./images/SQL7.png"/>
+<li>Then, return to the tabbed or seperate windowed phpMyAdmin page. It should look similar to the image below. </li>
+<img src="./images/SQL8.png"/>
+<li>Input the hostname, username, and password collected from previous steps and click "Go" in the bottom right.</li>
+<img src="./images/SQL9.png"/><!--SQL 9 -->
+<li>Upon logging in, phpMyAdmin will now be displayed.</li>
+<img src="./images/SQL10.png"/>
+<li>In the top naviation menu, click "Export"</li>
+<img src="./images/SQL11.png"/>
+<li>In most cases, a "Quick" export method will suffice. </li>
+<p>In cases of extra scripting, database magic, or excess database information (such as eCommerce, forums, etc), a "Custom" export may be required. </p>
+<p><a href="https://docs.phpmyadmin.net/en/latest/import_export.html#export">See additional information on phpMyAdmin's Docs here</a></p>
+<p>Once Quick or Custom options are selected, click the "Go" button </p>
+<img src="./images/SQL12.png"/>
+<li>Your browser will start the download of the SQL Database. </li>
+<li>You have successfully exported and backed-up a MySQL Database!</li>
+</ol>
+
+
+</body>
+</html>
