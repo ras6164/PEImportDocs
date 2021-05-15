@@ -14,7 +14,7 @@
 	
 	<div class="row">
 		<h1>Transfer Documentation</h1>
-		<p>Updated May 12, 2021.</p>
+		<p>Updated May 15, 2021.</p>
 	</div>
 	<h2>Quick Links</h2>
 	<div class="row2">
@@ -37,16 +37,16 @@
 		<ol>
 		<li>Login to development server site (yourdomain.drnoce.biz/wp-admin).</li>
 			<li>Once on the Dashboard, locate the grey sidebar on the left and select "Plugins"</li>
-			<img src="images/All1.png" width="20%" height="auto" alt=""/>
+		  <img src="images/All1.png" width="20%" height="auto" alt=""/>
 			<li>Click "Add New" located on either the grey sidebar or at the top of the page.</li>
-			<img src="images/All2.png" width="15%" height="auto" alt=""/>
+		  <img src="images/All2.png" width="15%" height="auto" alt=""/>
 			<li>Search for "All-In-One WP Migration"</li>
-			<img src="images/All3.png" width="45%" height="auto" alt=""/>
+		  <img src="images/All3.png" width="45%" height="auto" alt=""/>
 			<li>Click "Install Now." The plugin will now install.</li>
 			<li>After installed, click the blue "Activate" button.</li>
 			<img src="images/All4.png" width="35%" height="auto" alt=""/>
 			<li>Towards the button of the grey sidebar, click "All-in-One WP Migration."</li>
-			<img src="images/All5.png" width="20%" height="auto" alt=""/>
+		  <img src="images/All5.png" width="20%" height="auto" alt=""/>
 			<li>Ensure you are in export mode.</li>
 			<li>Press the green "Export to" button and select "File."</li>
 			<img src="images/All6.png" width="35%" height="auto" alt=""/>
@@ -54,40 +54,126 @@
 			<img src="images/All7.png" width="35%" height="auto" alt=""/>
 			<li>Log onto the client's provided WordPress account (<b>This should <i>not</i> end in .drnoce.biz</b>)</li>
 			<li>If the site export is less than 512 mb, repeat Steps 2-7 to install the "All-In-One WP Migration" Plugin on the client's webspace. If the site export is more than 512 mb, <a href="#large">follow these steps instead.</a></li>
-			<li id="return">Select import in the grey sidebar and ensure you are in import mode.</li>
+		  <li id="return">Select import in the grey sidebar and ensure you are in import mode.</li>
 			<img src="images/All8.png" width="15%" height="auto" alt=""/>
 			<li>Upload the .wpres file. Note: this process may take a long time.</li>
 			<img src="images/All9.png" width="35%" height="auto" alt=""/>
 			<li>Once completed, click permalink settings in the box.</li>
 			<li>Click "Save Changes." After this, click "Save Changes" again.</li>
 			
-			<h3 id="large">If My Export File is Larger than 512mb:</h3>	
-			<p>The free version of All-In-One WP Migration has an import limit of 512mb. Partnership Erie has a paid license that allows for larger file sizes to be uploaded. In the event </p>
+		  <h3 id="large">If My Export File is Larger than 512mb:</h3>	
+		  <p>The default version of All-In-One WP Migration has an import limit of 512mb. Partnership Erie has a modified program that allows for larger file sizes to be uploaded.</p>
 			<ol>
-				<li>Contact Dr. Noce or visit Teams to find the Unlimited All-In-One WP Migration .zip.</li>
+				<li>Contact Dr. Noce or visit Teams to find the Modified All-In-One WP Migration .zip.</li>
 			<li>Once on the Dashboard, locate the grey sidebar on the left and select "Plugins"</li>
 			<li>Click "Add New" located on either the grey sidebar or at the top of the page.</li>
 				
 				<li>Towards the top of the site, click "upload plugin" and navigate to the .zip file provided.</li>
-				<img src="images/All10.png" width="45%" height="auto" alt=""/>
+			  <img src="images/All10.png" width="45%" height="auto" alt=""/>
 				<li>Activate the plugin.</li>
 				<li><a href="#return">Return to Step 13.</a></li>
 			</ol>
 			
-		</ol>
+	  </ol>
 	</div>
 	
 	
 	
-	<div id="2">
+<div id="2">
 		<h2>Step 2: FTP Backup</h2>
-		<p>Coming Soon...</p>
+		<p>Note: It is not required to backup FTP/SFTP before SQL. Both will backup fine regardless of the order.</p>
+
+<ol>
+<li>Log into DreamHost</li>
+<li>Once logged in, locate the left side panel and select "FTP & SSH Users"</li>
+<img width="65%" src="./images/FTP1.png"/>
+<li>From the drop down, select "Manage Users"</li>
+<img width="35%" src="./images/FTP2.png" />
+<li>All FTP accounts will now be displayed.</li>
+<img width="65%" src="./images/FTP3.png" />
+<li>Locate the FTP user associated to your domain and click "Show Info"</li>
+<img width="65%" src="./images/FTP4.png" />
+<li>The host, username, and port will be listed. Put this information aside for Step 12. Click "Reset Password"</li>
+<img width="65%" src="./images/FTP5.png" />
+<li>Input a new password into the text field and click the blue "Reset Password" button</li>
+<img width="65%" src="./images/FTP6.png" />
+<li>DreamHost may take a few minutes to reset the SFTP password</li>
+<img width="65%" src="./images/FTP7.png" />
+<li>Once the password is reset, the same panel in FTP users will be diplayed showing the new password. You have successfull changed and acquired the SFTP/FTP password.</li>
+<img width="65%" src="./images/FTP8.png" />
+<li>Using the host, username, and password, we start setting up to connect via SFTP/FTP </li>
+<p>You can use DreamHost's "Manage Files" button in the top right of the FTP/SFTP user or an external FTP client. I reccomend using Filezilla as it is often faster and more reliable than browser transfers. </p>
+<p>You can <a href="https://filezilla-project.org/download.php?type=client">download Filezilla from their website here</a> </p>
+
+<li>Open FileZilla. The window should lool similar to the image below.  </li>
+<img width="65%"  src="./images/FTP9.png" />
+<li>Next, input your host, username, password, and port and click "Quick Connect". This information was collected in Step 9</li>
+<img width="65%" src="./images/FTP10.png" />
+<li>You may be alerts to an "Unknown Host Key". Click "OK"</li>
+<img width="35%" src="./images/FTP11.png" />
+<li>Upon successfully connecting, you will see the sever contents appear in the right-side panel.</li>
+<p>The left side is your local directory/PC. </p>
+<img width="65%" src="./images/FTP12.png" />
+<li>Navigate in the left panel to where you would like to store your backup. Then drag and drop your domain from the right panel to the left. </li>
+<img width="65%"  src="./images/FTP13.png" />
+<li>You will see activity in "Queued Files" section at the bottom of FileZilla signifying the transfer of files. This process can take 5-120 minutes to complete depending on the website, computer, and server, so feel free to grab a coffee or something while we wait.</li>
+<img width="65%" src="./images/FTP14.png" />
+<li>Upon completion, the "Queued Files" section mentioned in the previous step will be empty. </li>
+<p>For reference, the basic WordPress installation used in this example transfered 5,911 files in total. </p>
+<img width="65%" src="./images/FTP15.png" />
+<li>The SFTP/FTP transfer is now complete.</li>
+</ol>
+
+<p><a href="./SQLBackup.html">Click to Continue to Step 3: SQL </a></p>
 	</div>
 	
 	<div id="3">
 		<h2>Step 3: SQL Backup</h2>
-		<p>Coming Soon...</p>
-	</div>
+	<p>This method uses DreamHost's internal website and phpMyAdmin platform to access and export MySQL databases. - <a href="https://help.dreamhost.com/hc/en-us/articles/214395738-phpMyAdmin-How-to-backup-or-export-a-database-or-table"> Reference</a></p>
+<p>MySQL databases can also be backed up via SSH - <a href="https://help.dreamhost.com/hc/en-us/articles/221686207-SSH-Backing-up-your-database">Reference</a></p>
+
+<p>
+Backing up the SQL will require a similar process as FTP.
+</p>
+
+<ol>
+<li>Log into DreamHost</li>
+<li>Once logged in, locate the left side panel and select "More"</li>
+<img width="35%" src="./images/SQL1.png"/>
+<li>From the "More" drop down, select "MySQL Databases"</li>
+<img width="35%" src="./images/SQL2.png"/>
+<li>A page will load displaying options to create a new SQL Database and diplsay all current MySQL servers currently hosted in the DreamHost account</li>
+<img width="65%" src="./images/SQL3.png"/>
+<li>Locate your desired domain and copy the hostname (MYSQL.MYDOMAIN.Drnoce.biz) address into a seperate document for later use</li> 
+<p>Additionally, middle click or right click "phpMyAdmin" and open it as a new window or tab. We will use this page to log in to the database. </p>
+<img width="65%" src="./images/SQL4.png"/>
+<li>Then, continue down the page until you have located your domain under "Databases on this server".</li> <!-- EXPLAIN THIS BETTER BUD -->
+<p>Then click the item in third column, usually YourDomaindrnocebiz or something similar. This text is blue and links to another page. Click on that text. </p>
+<img width="65%" src="./images/SQL5.png"/>
+<li>The MySQL user page will be displayed.</li>
+<p>At the top of the page, you will see the header: "User XXXXX has access to the following ....". Copy word/phrase after user aside for later use. </p>
+<p>This is the same text that was clicked on in the previous step. </p>
+<p>This is your MySQL Database username. </p>
+<img width="65%" src="./images/SQL6.png"/><!--SQL 6-->
+<li>Next, scroll down and locate "Current Password". Click the "Show" button to display the user's SQL password. Put this information aside.</li>
+<img width="65%" src="./images/SQL7.png"/>
+<li>Then, return to the tabbed or seperate windowed phpMyAdmin page. It should look similar to the image below. </li>
+<img width="35%" src="./images/SQL8.png"/>
+<li>Input the hostname, username, and password collected from previous steps and click "Go" in the bottom right.</li>
+<img width="35%" src="./images/SQL9.png"/><!--SQL 9 -->
+<li>Upon logging in, phpMyAdmin will now be displayed.</li>
+<img width="65%" src="./images/SQL10.png"/>
+<li>In the top naviation menu, click "Export"</li>
+<img width="65%" src="./images/SQL11.png"/>
+<li>In most cases, a "Quick" export method will suffice. </li>
+<p>In cases of extra scripting, database magic, or excess database information (such as eCommerce, forums, etc), a "Custom" export may be required. </p>
+<p><a href="https://docs.phpmyadmin.net/en/latest/import_export.html#export">See additional information on phpMyAdmin's Docs here</a></p>
+<p>Once Quick or Custom options are selected, click the "Go" button </p>
+<img width="65%" src="./images/SQL12.png"/>
+<li>Your browser will start the download of the SQL Database. </li>
+<li>You have successfully exported and backed-up a MySQL Database!</li>
+</ol>
+</div>
 	
 	
 	<div class="logo">
